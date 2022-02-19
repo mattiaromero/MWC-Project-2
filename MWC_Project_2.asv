@@ -137,12 +137,12 @@ for j = 1:3
     end
 end
 
-%Sea swell (In this loop we also calculate the peak period for the bonus question T_maxs)
+%Sea swell
 for j = 1:3
     for i=1:5
         [S f edf conf95Interval] = VarianceDensitySpectrum(data(:,i+(j-1)*5),0.5^3*length(lowP(:,i)),2);
-        [maxf Imaxf] = max(S); 
-        T_maxs(i,j) = 1/(f(Imaxf)); %Computing the peak period for the different time series
+        [maxf Imaxf] = max(S) 
+        T_maxp(i,j) = 1/(f(Imaxf)) %Computing the max 
         m0ss(i,j) = spectral_moment(f,S,0.05,1);
         H_m0ss = 4*sqrt(m0ss);   %So now H_m0 = 4*sqrt(m_0)
             
