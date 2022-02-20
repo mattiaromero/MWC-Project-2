@@ -55,6 +55,7 @@ for i=1:4
     hold on;
     line([conf95Interval(1) conf95Interval(1)],[0 6],'Color','k','LineWidth',2);
     line([conf95Interval(2) conf95Interval(2)],[0 6],'Color','k','LineWidth',2); 
+    grid on;
     ylabel('E [m^2/Hz]','FontWeight','bold');
     if i==1
     title('Spectrum and confidence interval for N=3,7,15 and 31 blocks');
@@ -71,7 +72,6 @@ for i=1:4
     end
 end
 xlabel('Frequency [Hz]','FontWeight','bold');
-grid on;
 savefig('Matlab2_ii');
 
 %% Extend to multiple sensors at low tide
@@ -89,6 +89,7 @@ for i=1:5
     [S f edf conf95Interval] = VarianceDensitySpectrum(lowP(:,i),0.5^3*length(lowP(:,i)),2);
     plot(f,S);
     ylim([0 2]);
+    grid on;
     if i==1 
         title('Spectra for P1, P3, P4, P5 and P6 for N=15 blocks');
     end 
@@ -96,7 +97,6 @@ for i=1:5
     legend('Spectrum (N=15)');
 end
 xlabel('Frequency [Hz]','FontWeight','bold');
-grid on;
 savefig('Matlab2_iii');
 
 % As we get closer to shore we have less waves with smaller frequencies.
@@ -108,6 +108,7 @@ savefig('Matlab2_iii');
 figure;
 [S f edf conf95Interval] = VarianceDensitySpectrum(lowP(:,1),0.5^3*length(lowP(:,1)),2);
 plot(f,S);
+grid on;
 title('Spectrum at P1 for N=15 blocks');
 ylabel('E [m^2/Hz]','FontWeight','bold');
 xlabel('Frequency [Hz]','FontWeight','bold');
