@@ -48,6 +48,7 @@ savefig('Matlab2_i');
 
 %Compare with the spectra obtained using 3, 7, 15, 31 blocks. 
 figure;
+%legen = [['Spectrum (N =3)'] ['Spectrum (N = 7)'] ['Spectrum (N = 15)'] ['Spectrum (N = 31)']]
 for i=1:4
     subplot(4,1,i);
     [S f edf conf95Interval] = VarianceDensitySpectrum(lowP1,0.5^i*length(lowP1),2);
@@ -55,6 +56,7 @@ for i=1:4
     hold on;
     line([conf95Interval(1) conf95Interval(1)],[0 6],'Color','k','LineWidth',2);
     line([conf95Interval(2) conf95Interval(2)],[0 6],'Color','k','LineWidth',2); 
+    %legend(legen(i));
 end
 title('Spectrum and confidence interval for N=3,7,15 and 31 blocks');
 xlabel('Frequency [Hz]','FontWeight','bold');
@@ -86,10 +88,10 @@ for i=1:5
     %line([conf95Interval(1) conf95Interval(1)],[0 6],'Color','k','LineWidth',2);
     %line([conf95Interval(2) conf95Interval(2)],[0 6],'Color','k','LineWidth',2); 
 end
-title('Spectrum and confidence interval for N=3,7,15 and 31 blocks');
+title('Spectrum and for P1, P3, P4, P5 and P6 for N=15 blocks');
 xlabel('Frequency [Hz]','FontWeight','bold');
 ylabel('Spectrum [m^2/Hz]','FontWeight','bold');
-legend('Spectrum (N=3)','Confidence interval (95%) (N=3)','Spectrum (N=3)','Confidence interval (95%) (N=3)');
+legend('Spectrum (N=15)');
 grid on;
 savefig('Matlab2_iii');
 
