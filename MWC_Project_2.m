@@ -99,8 +99,7 @@ xlabel('Frequency [Hz]','FontWeight','bold');
 grid on;
 savefig('Matlab2_iii');
 
-% As we get closer to shore we have less waves with smaller frequencies
-% because waves get smaller with higher frequencies?
+% As we get closer to shore we have less waves with smaller frequencies.
 
 %% Computation of spectral wave characteristics
 % The separation between infragravity-wave and sea-swell frequencies is
